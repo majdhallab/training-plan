@@ -1807,6 +1807,43 @@
   }
 
   goToToday();
+
+  // ── SWIPE GESTURES ──────────────────────────────
+  let touchStartX = 0;
+  let touchStartY = 0;
+
+  document.addEventListener('touchstart', e => {
+    touchStartX = e.touches[0].clientX;
+    touchStartY = e.touches[0].clientY;
+  }, { passive: true });
+
+  document.addEventListener('touchend', e => {
+    const dx = e.changedTouches[0].clientX - touchStartX;
+    const dy = e.changedTouches[0].clientY - touchStartY;
+    // Only trigger if horizontal swipe is dominant and long enough
+    if (Math.abs(dx) > 60 && Math.abs(dx) > Math.abs(dy) * 1.5) {
+      if (dx < 0) navigateDay(1);  // swipe left = next
+      else navigateDay(-1);         // swipe right = prev
+    }
+  }, { passive: true });
+
+  // ── WAKE LOCK ──────────────────────────────
+  let wakeLock = null;
+
+  async function requestWakeLock() {
+    try {
+      if ('wakeLock' in navigator) {
+        wakeLock = await navigator.wakeLock.request('screen');
+      }
+    } catch(e) {}
+  }
+
+  // Re-acquire on visibility change (iOS releases it when app goes background)
+  document.addEventListener('visibilitychange', () => {
+    if (document.visibilityState === 'visible') requestWakeLock();
+  });
+
+  requestWakeLock();
 </script>
 </body>
 </html>
