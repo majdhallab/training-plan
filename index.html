@@ -1,0 +1,1812 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>Training Plan</title>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Train">
+<meta name="theme-color" content="#0a0a0a">
+<link rel="apple-touch-icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALQAAAC0CAIAAACyr5FlAAAGwUlEQVR4nO3dW1BUdQDH8f9Z9siCGKCIkHlKyKI7jpcUGie6oDVN5pROTTWkjU0PvVRP5dRDM800Tj30YA9pDUzOWCYzVtNtFJrpNuhD2XXMhASVW6CYgptH2R6OrOvCT+Ck7C58P09nz/7P7gG+/M/u2YW1HMcxwFCCxhjbthO9G0g6rusGvSX6QCzXdY03c3haWloStzNIItFHGoHE7geSGXFAIg5IxAGJOCARByTigEQckIgDEnFAIg5IxAGJOCARByTigEQckIgDEnFAIg5IxAGJOCARByTigEQckIgDEnFAIg5IxAGJOCARByTigEQckIgDEnFAIg5IxAGJOCARByTigEQckIgDEnFAIg5IweGHJM6Hb5Tn5aaPZGTX0X9XPv+dMaZuU0UgYMVeFYlE+sJn2rvCP+/r+eirw82tvepGZuZnbH5tceya1S/tOnB4iPGx91K1rqGlrW/w+o7u8OMvNLin+6NbPfVQ8SP3Xuktv16999OvW0fypSXQ+J85LMuanBEsnpW14s4r3nll4Z23zlAjl5YXxq8pK/B9vzOmhZZXzPS9eTJI6pnDmwyinnlkzoN3z/KWt9cfenPzvgtv7v1OT82etLJy1sP3XGmMSQtYz1WV7P61+3jv6bjBlmUqB6Vw9+KCjbVN/f0Rf/v/6H1XffZNa1/4jL/NE278zxxHjp16e1tTZ3fYu5gZSptbkjt4WOm1uTOmhbzl6LFgWk76vOuHGDxCOVPsVUtT+IOwxn8cxphIJNI88LDAGDPk45il5eemjY3bGmPWxx9rRmXlUidnSqp+0NGEiMMYY8U8SD123I27NpSetmR+vrfc2R3etuPg4c6T3sXb5k6fnDHqg2/fydN/thw3xmSG0h677ypfu5x4EyIOy7Kcwkxvub8/8lvjsbgBS+ZNz0hP85brd3dEIqZ+V4d3MX1S4PYF+aO9x4gxm2qbvOX7K2ZGD1ipZfzHMTV70tOrivOnnv3x1O481N4VjhuzLObYsbOhwxhTNxCHOf+IM3K7f+nes/eoMcYOBlY/MNvHLSRcUj9b+Z9qXl0Ue/HIsVNbPmvetuNg3LD8qaHSkhxvubmtt/HgCWNMc2tv08ETRbOyjDE3zcm5PD+jdeBAM3Ibaxs3rJtvjKksK9jyeep9hN74nzmi7GAgKzNoWfHrK8sKrIG1dQ3nJozzJg9fJzx+b/zn2x/+NsZYlrX2wWIft5BY43nmqFrX0PZ3+Lqiy9atvT5/WmjK5GDV8tmZobS3PtgfOyz2B79mRdGaFUWDb6qyrLD6o78ioz/fsam2qaw0LxCwyufmZWWm2Hd7nM8c7un+n/f1vLzhl8jAD/ahSufGOdnRATcUZ19RkDns7RTkhW6+JsfHDjS39X75fbu3fMu1fm4hgVKsZX/+OHC8blfHXYsKjDGWZZ5cUfTs+h+9q2IfbD7+YsOh9r7YDQvyQlvWlw2MLPzpjx4f9169/a+7Fs2wg6n3e5h6e+zPe58ciE4epSW53i+xHQxULDz7Ukt3z79xZRhj2rvC0ac2ty/IT5+U5uOuO4+Et9cd8rfbiTVR4mhp66vf3Rm9+MTy2caY2McBP+49OuSG0fUZ6WlL5k33d++bP23uOxn/ak7ymyhxGGPe+/i8yaO0JDf29MaevT1DbrUnJpplfk+l/3PCff+L1HsqazmOY9u2bdt8lj08juO4ruu67gSaOTBaxAGJOCARByTigEQckMbu9PlX797hb8OKNfUXHvDEsiR9n2b1cOc2Lt335KJg5oBEHJDGw6uyw87e8IeZAxJxQEr2w0rN1v3qyUgKHU3Ul1CzdX/VqqvHeGdGjpkDEnFAIg5IxAGJOCARByTigEQckIgDEnFAIg5IxAGJOCARByTigEQckIgDUrK/E+wCfP/Rx9ir2bp/+EHJh5kDEnFAIg5IxAGJOCARByTigEQckFL4JNjY/AOTiyJp/73MhTFzQCIOSMQBiTggEQck4oBEHJCIAxJxQCIOSMQBiTggEQck4oBEHJCIAxJxQEr2d4JVrbo6hd7xpaj/4Z/kf9HJzAGJOCARByTigEQckCzHcWzbtm27pSVlPhULl5TjOK7ruq7LzAGJOCARByTigEQckIgDEnFAIg5IxAGJOCARByTigEQckIgDEnFAIg5IxAGJOCARByTigEQckIgDEnFAIg5IxAGJOCARByTigEQckIgDEnFAIg5IxAGJOCARByTigEQckIgDEnFAIg5IxAGJOCARByTigEQckIgDEnFAIg5IxAHp3OfKOo6TwP1AEjobh+u6id0PJKGgoQwI/wGodIo1SpjH1QAAAABJRU5ErkJggg==">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0a0a0a;
+    --card: #141414;
+    --border: #252525;
+    --muted: #3a3a3a;
+    --subtle: #666;
+    --body: #aaa;
+    --light: #e0e0e0;
+    --white: #f5f4f0;
+    --gold: #c9a84c;
+    --gold-light: #e8c97a;
+    --gold-dim: #6a5228;
+    --accent: #d4f542;
+    --accent-dim: #7a9020;
+    --red: #e05c4b;
+    --red-dim: #7a2a20;
+    --blue: #4b9fe0;
+    --blue-dim: #1a4a7a;
+    --teal: #3dd6c4;
+    --teal-dim: #1a6a60;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+
+  html, body {
+    background: var(--bg);
+    color: var(--body);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 15px;
+    line-height: 1.5;
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  /* ── TOP NAV ── */
+  .top-nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(10,10,10,0.95);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+    padding: 0;
+  }
+
+  .days-scroll {
+    display: flex;
+    overflow-x: auto;
+    scrollbar-width: none;
+    padding: 0 4px;
+  }
+  .days-scroll::-webkit-scrollbar { display: none; }
+
+  .day-btn {
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px 14px;
+    border: none;
+    background: none;
+    cursor: pointer;
+    position: relative;
+    gap: 3px;
+    transition: opacity 0.2s;
+  }
+
+  .day-btn .day-name {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--subtle);
+    transition: color 0.2s;
+  }
+
+  .day-btn .day-label {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 16px;
+    color: var(--muted);
+    letter-spacing: 0.05em;
+    transition: color 0.2s;
+    line-height: 1;
+  }
+
+  .day-btn .day-dot {
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background: transparent;
+    transition: background 0.2s;
+  }
+
+  .day-btn.active .day-name { color: var(--white); }
+  .day-btn.active .day-label { color: var(--white); }
+  .day-btn.active .day-dot { background: var(--gold); }
+
+  .day-btn.legs-day.active .day-dot { background: var(--red); }
+  .day-btn.push-day.active .day-dot { background: var(--gold); }
+  .day-btn.pull-day.active .day-dot { background: var(--accent); }
+  .day-btn.arms-day.active .day-dot { background: var(--blue); }
+  .day-btn.rest-day .day-label { color: var(--muted); opacity: 0.5; }
+  .day-btn.rest-day.active .day-label { color: var(--subtle); opacity: 1; }
+
+  /* ── ACTIVE INDICATOR BAR ── */
+  .day-btn::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 2px;
+    background: var(--gold);
+    transition: width 0.25s;
+  }
+  .day-btn.active::after { width: 70%; }
+  .day-btn.legs-day.active::after { background: var(--red); }
+  .day-btn.pull-day.active::after { background: var(--accent); }
+  .day-btn.arms-day.active::after { background: var(--blue); }
+  .day-btn.rest-day.active::after { background: var(--subtle); }
+
+  /* ── VIEWS ── */
+  .view { display: none; padding: 16px 14px 100px; animation: fadeIn 0.2s ease; }
+  .view.active { display: block; }
+
+  @keyframes fadeIn { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: translateY(0); } }
+
+  /* ── DAY HEADER ── */
+  .day-header { margin-bottom: 16px; }
+
+  .day-tag-row { display: flex; align-items: center; gap: 8px; margin-bottom: 4px; }
+
+  .tag {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    padding: 3px 8px;
+    font-weight: 500;
+  }
+  .tag.push { background: var(--gold); color: #000; }
+  .tag.pull { background: var(--accent); color: #000; }
+  .tag.legs { background: var(--red); color: #fff; }
+  .tag.arms { background: var(--blue); color: #fff; }
+  .tag.rest { background: var(--card); color: var(--subtle); border: 1px solid var(--border); }
+  .tag.bonus { background: var(--card); color: var(--gold); border: 1px solid var(--gold-dim); }
+
+  .day-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 42px;
+    color: var(--white);
+    letter-spacing: 0.04em;
+    line-height: 1;
+  }
+
+  .day-subtitle {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    color: var(--subtle);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-top: 2px;
+  }
+
+  /* ── WALK BANNER ── */
+  .walk-banner {
+    background: rgba(61,214,196,0.07);
+    border: 1px solid rgba(61,214,196,0.2);
+    border-left: 3px solid var(--teal);
+    padding: 12px 14px;
+    margin-bottom: 14px;
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+  }
+
+  .walk-icon { font-size: 20px; flex-shrink: 0; margin-top: 1px; }
+
+  .walk-text { flex: 1; }
+  .walk-title-text {
+    font-family: 'DM Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--teal);
+    margin-bottom: 3px;
+  }
+  .walk-body { font-size: 13px; color: var(--body); line-height: 1.5; }
+  .walk-body strong { color: var(--teal); }
+
+  .walk-badge {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 30px;
+    color: var(--teal);
+    line-height: 1;
+    flex-shrink: 0;
+    text-align: right;
+  }
+  .walk-badge-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 8px;
+    color: var(--teal-dim);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    text-align: right;
+  }
+
+  /* ── ALERT BOX ── */
+  .alert {
+    border-left: 3px solid var(--gold-dim);
+    background: var(--card);
+    padding: 11px 13px;
+    margin-bottom: 14px;
+    font-size: 13px;
+    color: var(--body);
+    line-height: 1.55;
+  }
+  .alert strong { color: var(--light); }
+  .alert em { color: var(--gold-light); font-style: normal; }
+  .alert.red { border-left-color: var(--red); }
+  .alert.red strong { color: #ff8a7a; }
+  .alert.green { border-left-color: var(--accent-dim); }
+  .alert.green strong { color: var(--accent); }
+  .alert.blue { border-left-color: var(--blue-dim); }
+  .alert.blue strong { color: var(--blue); }
+  .alert.teal { border-left-color: var(--teal-dim); }
+  .alert.teal strong { color: var(--teal); }
+
+  .alert-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 6px;
+  }
+  .alert.red .alert-label { color: var(--red); }
+  .alert.green .alert-label { color: var(--accent); }
+  .alert.blue .alert-label { color: var(--blue); }
+  .alert.teal .alert-label { color: var(--teal); }
+
+  /* ── EXERCISE LIST ── */
+  .section-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--subtle);
+    margin-bottom: 8px;
+    padding-bottom: 6px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .ex-list { margin-bottom: 14px; }
+
+  .ex-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 11px 0;
+    border-bottom: 1px solid rgba(37,37,37,0.6);
+  }
+  .ex-item:last-child { border-bottom: none; }
+
+  .ex-num {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    color: var(--gold-dim);
+    flex-shrink: 0;
+    width: 18px;
+  }
+
+  .ex-info { flex: 1; }
+  .ex-name {
+    font-size: 15px;
+    color: var(--light);
+    font-weight: 500;
+    line-height: 1.3;
+  }
+  .ex-note {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    color: var(--subtle);
+    margin-top: 2px;
+  }
+  .ex-note.teal { color: var(--teal-dim); }
+  .ex-note.green { color: var(--accent-dim); }
+  .ex-note.blue { color: var(--blue-dim); }
+  .ex-note.red { color: var(--red-dim); }
+
+  .ex-sets {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 18px;
+    color: var(--gold-light);
+    flex-shrink: 0;
+    text-align: right;
+    letter-spacing: 0.02em;
+    line-height: 1;
+  }
+  .ex-sets .ex-sets-unit {
+    font-family: 'DM Mono', monospace;
+    font-size: 9px;
+    color: var(--subtle);
+    display: block;
+    letter-spacing: 0.1em;
+  }
+
+  /* ── SUPERSET CONNECTOR ── */
+  .superset-line {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 4px 0 4px 28px;
+  }
+  .superset-line::before {
+    content: '';
+    width: 2px;
+    height: 12px;
+    background: var(--gold-dim);
+    display: block;
+    flex-shrink: 0;
+  }
+  .superset-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 9px;
+    color: var(--gold-dim);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
+  /* ── POST WALK BLOCK ── */
+  .post-walk {
+    background: rgba(61,214,196,0.05);
+    border: 1px solid rgba(61,214,196,0.15);
+    border-top: 2px solid var(--teal);
+    padding: 13px 14px;
+    margin-bottom: 14px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .post-walk-content { flex: 1; }
+  .post-walk-title {
+    font-family: 'DM Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--teal);
+    margin-bottom: 4px;
+  }
+  .post-walk-text { font-size: 13px; color: var(--body); line-height: 1.5; }
+  .post-walk-text strong { color: var(--teal); }
+  .post-walk-num {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 36px;
+    color: var(--teal);
+    line-height: 1;
+    flex-shrink: 0;
+  }
+
+  /* ── REST DAY ── */
+  .rest-center {
+    text-align: center;
+    padding: 40px 20px;
+  }
+  .rest-big {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 80px;
+    color: var(--border);
+    line-height: 1;
+    margin-bottom: 12px;
+  }
+  .rest-text { font-size: 14px; color: var(--subtle); line-height: 1.6; }
+  .rest-text strong { color: var(--body); }
+
+  /* ── BONUS OPT SELECTOR ── */
+  .opt-tabs {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 14px;
+  }
+  .opt-tab {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid var(--border);
+    background: var(--card);
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+  .opt-tab .opt-tab-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--subtle);
+    margin-bottom: 3px;
+  }
+  .opt-tab .opt-tab-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 16px;
+    color: var(--muted);
+    letter-spacing: 0.05em;
+  }
+  .opt-tab.active {
+    border-color: var(--gold-dim);
+    background: rgba(201,168,76,0.06);
+  }
+  .opt-tab.active .opt-tab-label { color: var(--gold); }
+  .opt-tab.active .opt-tab-title { color: var(--gold-light); }
+
+  .opt-content { display: none; }
+  .opt-content.active { display: block; }
+
+  /* ── WEEK OVERVIEW ── */
+  .week-strip {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 4px;
+    margin-bottom: 14px;
+  }
+  .ws-day {
+    background: var(--card);
+    border: 1px solid var(--border);
+    padding: 8px 4px;
+    text-align: center;
+  }
+  .ws-day.today { border-color: var(--gold-dim); }
+  .ws-name {
+    font-family: 'DM Mono', monospace;
+    font-size: 8px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--subtle);
+    margin-bottom: 4px;
+  }
+  .ws-session {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 13px;
+    color: var(--muted);
+    line-height: 1;
+  }
+  .ws-day.legs-d .ws-session { color: var(--red); }
+  .ws-day.push-d .ws-session { color: var(--gold); }
+  .ws-day.pull-d .ws-session { color: var(--accent); }
+  .ws-day.arms-d .ws-session { color: var(--blue); }
+  .ws-walk { margin-top: 3px; }
+  .ws-walk-dot { display: inline-block; width: 4px; height: 4px; border-radius: 50%; background: var(--teal); opacity: 0.6; }
+
+  /* ── STATS ROW ── */
+  .stats-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 6px;
+    margin-bottom: 14px;
+  }
+  .stat-box {
+    background: var(--card);
+    border: 1px solid var(--border);
+    padding: 10px 8px;
+    text-align: center;
+  }
+  .stat-val {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 28px;
+    color: var(--gold-light);
+    line-height: 1;
+  }
+  .stat-val.teal { color: var(--teal); }
+  .stat-lbl {
+    font-family: 'DM Mono', monospace;
+    font-size: 8px;
+    color: var(--subtle);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-top: 2px;
+  }
+
+  /* ── LOG TAB ── */
+  .log-week-strip {
+    display: flex;
+    overflow-x: auto;
+    gap: 6px;
+    padding-bottom: 4px;
+    margin-bottom: 14px;
+    scrollbar-width: none;
+  }
+  .log-week-strip::-webkit-scrollbar { display: none; }
+  .log-day-pill {
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 8px 10px;
+    border: 1px solid var(--border);
+    background: var(--card);
+    cursor: pointer;
+    min-width: 52px;
+    transition: all 0.15s;
+    position: relative;
+  }
+  .log-day-pill.active {
+    border-color: var(--gold);
+    background: rgba(201,168,76,0.08);
+  }
+  .log-day-pill.today-pill { border-color: var(--teal-dim); }
+  .log-day-pill.today-pill.active { border-color: var(--teal); background: rgba(61,214,196,0.08); }
+  .log-pill-name {
+    font-family: 'DM Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--subtle);
+    margin-bottom: 2px;
+  }
+  .log-day-pill.active .log-pill-name { color: var(--gold-light); }
+  .log-day-pill.today-pill.active .log-pill-name { color: var(--teal); }
+  .log-pill-date {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 18px;
+    color: var(--muted);
+    line-height: 1;
+  }
+  .log-day-pill.active .log-pill-date { color: var(--white); }
+  .log-pill-dots {
+    display: flex;
+    gap: 3px;
+    margin-top: 4px;
+  }
+  .log-pill-dot {
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: var(--border);
+  }
+  .log-pill-dot.on { background: var(--teal); }
+  .log-pill-dot.score-hi { background: var(--accent); }
+  .log-pill-dot.score-mid { background: var(--gold); }
+  .log-pill-dot.score-lo { background: var(--red); }
+  .log-today-tag {
+    position: absolute;
+    top: -1px; right: -1px;
+    background: var(--teal);
+    color: #000;
+    font-family: 'DM Mono', monospace;
+    font-size: 7px;
+    padding: 1px 4px;
+    letter-spacing: 0.05em;
+  }
+
+  .log-selected-header {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    margin-bottom: 12px;
+  }
+  .log-selected-date {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 28px;
+    color: var(--white);
+    letter-spacing: 0.04em;
+    line-height: 1;
+  }
+  .log-selected-session {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    color: var(--subtle);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
+  .log-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    padding: 14px;
+    margin-bottom: 10px;
+  }
+  .log-card-title {
+    font-family: 'DM Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--subtle);
+    margin-bottom: 10px;
+  }
+
+  .log-check-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 8px 0;
+    border-bottom: 1px solid var(--border);
+    cursor: pointer;
+  }
+  .log-check-row:last-child { border-bottom: none; }
+  .log-check-label { font-size: 15px; color: var(--light); font-weight: 500; }
+  .log-check-sub { font-family: 'DM Mono', monospace; font-size: 9px; color: var(--subtle); margin-top: 1px; }
+  .log-checkbox {
+    width: 28px; height: 28px;
+    border: 2px solid var(--border);
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0; transition: all 0.15s; font-size: 16px;
+  }
+  .log-checkbox.checked { border-color: var(--teal); background: rgba(61,214,196,0.12); color: var(--teal); }
+  .log-checkbox.checked::after { content: '✓'; }
+
+  .log-score-row { padding: 4px 0; }
+  .log-score-label { font-size: 15px; color: var(--light); font-weight: 500; margin-bottom: 4px; }
+  .log-score-sub { font-family: 'DM Mono', monospace; font-size: 9px; color: var(--subtle); margin-bottom: 10px; }
+  .score-dots { display: flex; gap: 8px; }
+  .score-dot {
+    flex: 1; height: 44px;
+    border: 2px solid var(--border);
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Bebas Neue', sans-serif; font-size: 20px; color: var(--muted);
+    cursor: pointer; transition: all 0.15s;
+  }
+  .score-dot:active { transform: scale(0.95); }
+  .score-dot.active-1 { border-color: var(--red); color: var(--red); background: rgba(224,92,75,0.1); }
+  .score-dot.active-2 { border-color: #e08c4b; color: #e08c4b; background: rgba(224,140,75,0.1); }
+  .score-dot.active-3 { border-color: var(--gold); color: var(--gold); background: rgba(201,168,76,0.1); }
+  .score-dot.active-4 { border-color: #a0c840; color: #a0c840; background: rgba(160,200,64,0.1); }
+  .score-dot.active-5 { border-color: var(--accent); color: var(--accent); background: rgba(212,245,66,0.1); }
+
+  .log-water-row, .log-sleep-row, .log-weight-row {
+    display: flex; align-items: center; justify-content: space-between; padding: 6px 0;
+  }
+  .water-counter, .sleep-counter { display: flex; align-items: center; gap: 10px; }
+  .water-btn {
+    width: 36px; height: 36px;
+    border: 1px solid var(--border); background: var(--card);
+    color: var(--body); font-size: 20px;
+    display: flex; align-items: center; justify-content: center;
+    cursor: pointer; transition: all 0.15s;
+  }
+  .water-btn:active { background: var(--border); }
+  .water-val { font-family: 'Bebas Neue', sans-serif; font-size: 32px; color: var(--teal); min-width: 30px; text-align: center; line-height: 1; }
+  .water-unit { font-family: 'DM Mono', monospace; font-size: 9px; color: var(--teal-dim); letter-spacing: 0.1em; }
+  .sleep-val { font-family: 'Bebas Neue', sans-serif; font-size: 32px; color: var(--blue); min-width: 50px; text-align: center; line-height: 1; }
+  .sleep-unit { font-family: 'DM Mono', monospace; font-size: 9px; color: var(--blue-dim); letter-spacing: 0.1em; }
+  .weight-input-wrap { display: flex; align-items: baseline; gap: 4px; }
+  .weight-input {
+    background: none; border: none; border-bottom: 1px solid var(--border);
+    color: var(--gold-light); font-family: 'Bebas Neue', sans-serif; font-size: 32px;
+    width: 80px; text-align: right; outline: none; padding: 0 4px; line-height: 1;
+  }
+  .weight-input::placeholder { color: var(--muted); }
+  .weight-unit { font-family: 'DM Mono', monospace; font-size: 9px; color: var(--gold-dim); letter-spacing: 0.1em; }
+  .log-notes-input {
+    width: 100%; background: none; border: none; border-bottom: 1px solid var(--border);
+    color: var(--body); font-family: 'DM Sans', sans-serif; font-size: 14px;
+    padding: 8px 0; outline: none; resize: none; min-height: 36px;
+  }
+  .log-notes-input::placeholder { color: var(--muted); }
+  .log-save-btn {
+    width: 100%; padding: 14px; background: var(--gold); border: none;
+    color: #000; font-family: 'Bebas Neue', sans-serif; font-size: 20px;
+    letter-spacing: 0.1em; cursor: pointer; margin-bottom: 16px; transition: all 0.15s;
+  }
+  .log-save-btn:active { background: var(--gold-light); }
+  .log-save-btn.saved { background: var(--teal); }
+
+  /* ── BOTTOM NAV HINT ── */
+  .bottom-hint {
+    position: fixed;
+    bottom: 0;
+    left: 0; right: 0;
+    background: rgba(10,10,10,0.95);
+    backdrop-filter: blur(12px);
+    border-top: 1px solid var(--border);
+    padding: 10px 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .hint-prev, .hint-next {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--subtle);
+    cursor: pointer;
+    padding: 6px 10px;
+    border: 1px solid var(--border);
+    background: none;
+    transition: all 0.2s;
+  }
+  .hint-prev:active, .hint-next:active { background: var(--card); color: var(--light); }
+  .hint-today {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    color: var(--gold);
+    letter-spacing: 0.1em;
+    cursor: pointer;
+    text-transform: uppercase;
+  }
+</style>
+</head>
+<body>
+
+<!-- TOP NAV -->
+<nav class="top-nav">
+  <div class="days-scroll" id="daysNav">
+    <button class="day-btn legs-day" data-view="mon" onclick="switchDay('mon')">
+      <span class="day-name">Mon</span>
+      <span class="day-label">Legs</span>
+      <span class="day-dot"></span>
+    </button>
+    <button class="day-btn push-day" data-view="tue" onclick="switchDay('tue')">
+      <span class="day-name">Tue</span>
+      <span class="day-label">Push</span>
+      <span class="day-dot"></span>
+    </button>
+    <button class="day-btn pull-day" data-view="wed" onclick="switchDay('wed')">
+      <span class="day-name">Wed</span>
+      <span class="day-label">Pull</span>
+      <span class="day-dot"></span>
+    </button>
+    <button class="day-btn rest-day" data-view="thu" onclick="switchDay('thu')">
+      <span class="day-name">Thu</span>
+      <span class="day-label">Rest</span>
+      <span class="day-dot"></span>
+    </button>
+    <button class="day-btn legs-day" data-view="fri" onclick="switchDay('fri')">
+      <span class="day-name">Fri</span>
+      <span class="day-label">Legs</span>
+      <span class="day-dot"></span>
+    </button>
+    <button class="day-btn arms-day" data-view="sat" onclick="switchDay('sat')">
+      <span class="day-name">Sat</span>
+      <span class="day-label">Bonus</span>
+      <span class="day-dot"></span>
+    </button>
+    <button class="day-btn rest-day" data-view="sun" onclick="switchDay('sun')">
+      <span class="day-name">Sun</span>
+      <span class="day-label">Off</span>
+      <span class="day-dot"></span>
+    </button>
+    <button class="day-btn" data-view="notes" onclick="switchDay('notes')">
+      <span class="day-name">Ref</span>
+      <span class="day-label">Notes</span>
+      <span class="day-dot"></span>
+    </button>
+    <button class="day-btn" data-view="log" onclick="switchDay('log')">
+      <span class="day-name">Daily</span>
+      <span class="day-label">Log</span>
+      <span class="day-dot"></span>
+    </button>
+  </div>
+</nav>
+
+<!-- ══ MONDAY — LEGS HEAVY ══ -->
+<div class="view" id="view-mon">
+  <div class="day-header">
+    <div class="day-tag-row"><span class="tag legs">Monday</span></div>
+    <div class="day-title">LEGS</div>
+    <div class="day-subtitle">Heavy · Quads · Hamstrings · Glutes · Calves</div>
+  </div>
+
+  <div class="walk-banner">
+    <div class="walk-icon">☀️</div>
+    <div class="walk-text">
+      <div class="walk-title-text">Fasted Morning Walk — Before Breakfast</div>
+      <div class="walk-body"><strong>50 min walk + 10 min abs circuit</strong> — before eating anything. Walk HR 115–130. Every Mon–Sat without exception.</div>
+    </div>
+    <div>
+      <div class="walk-badge">60</div>
+      <div class="walk-badge-label">Min AM</div>
+    </div>
+  </div>
+
+  <div class="alert red">
+    <div class="alert-label">🔥 Highest Fat-Loss Day</div>
+    Biggest muscles = biggest calorie burn. <strong>Push intensity.</strong> This session + AM walk + post walk = <em>900+ kcal today.</em> Monday sets the tone for the week.
+  </div>
+
+  <div class="section-label">Exercises</div>
+  <div class="ex-list">
+    <div class="ex-item">
+      <div class="ex-num">01</div>
+      <div class="ex-info">
+        <div class="ex-name">Leg Press</div>
+        <div class="ex-note red">High reps — metabolic stress + max burn</div>
+      </div>
+      <div class="ex-sets">4×15<span class="ex-sets-unit">–20</span></div>
+    </div>
+    <div class="ex-item">
+      <div class="ex-num">02</div>
+      <div class="ex-info">
+        <div class="ex-name">Romanian Deadlift</div>
+        <div class="ex-note">Machine · neutral Y-grip · safe on left elbow</div>
+      </div>
+      <div class="ex-sets">4×12<span class="ex-sets-unit">–15</span></div>
+    </div>
+    <div class="ex-item">
+      <div class="ex-num">03</div>
+      <div class="ex-info">
+        <div class="ex-name">Leg Extension</div>
+        <div class="ex-note">Quad isolation · full contraction at top</div>
+      </div>
+      <div class="ex-sets">3×12<span class="ex-sets-unit">–15</span></div>
+    </div>
+    <div class="ex-item">
+      <div class="ex-num">04</div>
+      <div class="ex-info">
+        <div class="ex-name">Leg Curl</div>
+        <div class="ex-note">Hamstring isolation · slow negative</div>
+      </div>
+      <div class="ex-sets">3×12<span class="ex-sets-unit">–15</span></div>
+    </div>
+    <div class="ex-item">
+      <div class="ex-num">05</div>
+      <div class="ex-info">
+        <div class="ex-name">Walking Lunges</div>
+        <div class="ex-note">Unilateral · glute activation</div>
+      </div>
+      <div class="ex-sets">3×12<span class="ex-sets-unit">ea</span></div>
+    </div>
+    <div class="ex-item">
+      <div class="ex-num">06</div>
+      <div class="ex-info">
+        <div class="ex-name">Standing Calf Raise</div>
+        <div class="ex-note">Gastrocnemius</div>
+      </div>
+      <div class="ex-sets">4×15<span class="ex-sets-unit">–20</span></div>
+    </div>
+    <div class="ex-item">
+      <div class="ex-num">07</div>
+      <div class="ex-info">
+        <div class="ex-name">Seated Calf Raise</div>
+        <div class="ex-note">Soleus — do both, always</div>
+      </div>
+      <div class="ex-sets">3×15<span class="ex-sets-unit">–20</span></div>
+    </div>
+  </div>
+
+  <div class="post-walk">
+    <div class="post-walk-content">
+      <div class="post-walk-title">🚶 Post-Session Walk</div>
+      <div class="post-walk-text"><strong>30 min</strong> immediately after. Legs are trashed — walk anyway. Flushes lactate, burns fat at peak rate. HR 100–120 is fine today.</div>
+    </div>
+    <div>
+      <div class="post-walk-num">30</div>
+      <div class="walk-badge-label">Min Post</div>
+    </div>
+  </div>
+
+  <div class="alert">
+    <div class="alert-label">Notes</div>
+    Leg press 15–20 reps is <strong>deliberate</strong> — more metabolic stress, more lactic acid, more fat burned. This is not powerlifting. If you skip any session this week, <strong>never skip Monday.</strong>
+  </div>
+</div>
+
+<!-- ══ TUESDAY — PUSH ══ -->
+<div class="view" id="view-tue">
+  <div class="day-header">
+    <div class="day-tag-row"><span class="tag push">Tuesday</span></div>
+    <div class="day-title">PUSH</div>
+    <div class="day-subtitle">Chest · Shoulders · Triceps</div>
+  </div>
+
+  <div class="walk-banner">
+    <div class="walk-icon">☀️</div>
+    <div class="walk-text">
+      <div class="walk-title-text">Fasted Morning Walk — Before Breakfast</div>
+      <div class="walk-body"><strong>50 min walk + 10 min abs circuit</strong> — fasted. Walk tall, open chest. Every Mon–Sat.</div>
+    </div>
+    <div>
+      <div class="walk-badge">60</div>
+      <div class="walk-badge-label">Min AM</div>
+    </div>
+  </div>
+
+  <div class="section-label">Exercises</div>
+  <div class="ex-list">
+    <div class="ex-item">
+      <div class="ex-num">01</div>
+      <div class="ex-info">
+        <div class="ex-name">Incline DB Press</div>
+        <div class="ex-note">Upper chest first — hit it fresh</div>
+      </div>
+      <div class="ex-sets">4×10<span class="ex-sets-unit">–12</span></div>
+    </div>
+    <div class="ex-item">
+      <div class="ex-num">02</div>
+      <div class="ex-info">
+        <div class="ex-name">Flat DB Bench Press</div>
+        <div class="ex-note">Mid chest · full range of motion</div>
+      </div>
+      <div class="ex-sets">3×12</div>
+    </div>
+    <div class="ex-item">
+      <div class="ex-num">03</div>
+      <div class="ex-info">
+        <div class="ex-name">Machine Shoulder Press</div>
+        <div class="ex-note">Controlled — no elbow flare</div>
+      </div>
+      <div class="ex-sets">3×10<span class="ex-sets-unit">–12</span></div>
+    </div>
+    <div class="ex-item">
+      <div class="ex-num">04</div>
+      <div class="ex-info">
+        <div class="ex-name">Machine Lateral Raise</div>
+        <div class="ex-note green">Superset with 05 ↓</div>
+      </div>
+      <div class="ex-sets">3×12<span class="ex-sets-unit">–15</span></div>
+    </div>
+    <div class="superset-line"><span class="superset-label">Superset</span></div>
+    <div class="ex-item">
+      <div class="ex-num">05</div>
+      <div class="ex-info">
+        <div class="ex-name">Cable Tricep Pushdown</div>
+        <div class="ex-note green">Rope · superset with 04 ↑</div>
+      </div>
+      <div class="ex-sets">3×12<span class="ex-sets-unit">–15</span></div>
+    </div>
+    <div class="ex-item">
+      <div class="ex-num">06</div>
+      <div class="ex-info">
+        <div class="ex-name">Skull Crushers</div>
+        <div class="ex-note red">EZ bar · stop if elbow pain</div>
+      </div>
+      <div class="ex-sets">3×10<span class="ex-sets-unit">–12</span></div>
+    </div>
+  </div>
+
+  <div class="post-walk">
+    <div class="post-walk-content">
+      <div class="post-walk-title">🚶 Post-Session Walk</div>
+      <div class="post-walk-text"><strong>30 min brisk walk.</strong> Glycogen depleted from pressing — body pulls from fat stores now. HR 115–130.</div>
+    </div>
+    <div>
+      <div class="post-walk-num">30</div>
+      <div class="walk-badge-label">Min Post</div>
+    </div>
+  </div>
+
+  <div class="alert">
+    <div class="alert-label">Notes</div>
+    <strong>Incline always first.</strong> Upper chest is most underdeveloped. Superset lateral raise + pushdown cuts time and spikes heart rate. Triceps here are <strong>secondary</strong> — they get their full session Saturday bonus.
+  </div>
+</div>
+
+<!-- ══ WEDNESDAY — PULL ══ -->
+<div class="view" id="view-wed">
+  <div class="day-header">
+    <div class="day-tag-row"><span class="tag pull">Wednesday</span></div>
+    <div class="day-title">PULL</div>
+    <div class="day-subtitle">Back · Rear Delts</div>
+  </div>
+
+  <div class="walk-banner">
+    <div class="walk-icon">☀️</div>
+    <div class="walk-text">
+      <div class="walk-title-text">Fasted Morning Walk — Before Breakfast</div>
+      <div class="walk-body"><strong>50 min walk + 10 min abs circuit</strong> — fasted. Back day: walk tall, engage posture. Every Mon–Sat.</div>
+    </div>
+    <div>
+      <div class="walk-badge">60</div>
+      <div class="walk-badge-label">Min AM</div>
+    </div>
+  </div>
+
+  <div class="section-label">Exercises</div>
+  <div class="ex-list">
+    <div class="ex-item">
+      <div class="ex-num">01</div>
+      <div class="ex-info">
+        <div class="ex-name">Straight Arm Cable Pulldown</div>
+        <div class="ex-note green">Pre-exhaust lats before compound</div>
+      </div>
+      <div class="ex-sets">3×12<span class="ex-sets-unit">–15</span></div>
+    </div>
+    <div class="ex-item">
+      <div class="ex-num">02</div>
+      <div class="ex-info">
+        <div class="ex-name">Lat Pulldown</div>
+        <div class="ex-note">Overhand wide · use straps</div>
+      </div>
+      <div class="ex-sets">4×10<span class="ex-sets-unit">–12</span></div>
+    </div>
+    <div class="ex-item">
+      <div class="ex-num">03</div>
+      <div class="ex-info">
+        <div class="ex-name">Seated Cable Row</div>
+        <div class="ex-note">Use straps · drive elbows not hands</div>
+      </div>
+      <div class="ex-sets">3×10<span class="ex-sets-unit">–12</span></div>
+    </div>
+    <div class="ex-item">
+      <div class="ex-num">04</div>
+      <div class="ex-info">
+        <div class="ex-name">Single Arm DB Row</div>
+        <div class="ex-note">Use straps · full stretch at bottom</div>
+      </div>
+      <div class="ex-sets">3×10<span class="ex-sets-unit">–12</span></div>
+    </div>
+    <div class="ex-item">
+      <div class="ex-num">05</div>
+      <div class="ex-info">
+        <div class="ex-name">Face Pulls</div>
+        <div class="ex-note green">Never skip — rear delts + rotator cuff</div>
+      </div>
+      <div class="ex-sets">3×15</div>
+    </div>
+  </div>
+
+  <div class="post-walk">
+    <div class="post-walk-content">
+      <div class="post-walk-title">🚶 Post-Session Walk</div>
+      <div class="post-walk-text"><strong>30 min</strong> post-session. Back creates significant EPOC — walking now maximizes fat oxidation while metabolism is elevated.</div>
+    </div>
+    <div>
+      <div class="post-walk-num">30</div>
+      <div class="walk-badge-label">Min Post</div>
+    </div>
+  </div>
+
+  <div class="alert">
+    <div class="alert-label">Notes</div>
+    Biceps removed — they get Saturday bonus. Today <strong>go heavier on rows.</strong> Straight arm pulldown first pre-fatigues the lat so back fails before biceps on lat pulldown. <strong>Face pulls are mandatory</strong> — they keep your shoulders healthy long term.
+  </div>
+</div>
+
+<!-- ══ THURSDAY — REST ══ -->
+<div class="view" id="view-thu">
+  <div class="day-header">
+    <div class="day-tag-row"><span class="tag rest">Thursday</span></div>
+    <div class="day-title">REST</div>
+    <div class="day-subtitle">Recovery · AM Walk Only</div>
+  </div>
+
+  <div class="walk-banner">
+    <div class="walk-icon">☀️</div>
+    <div class="walk-text">
+      <div class="walk-title-text">Fasted Morning Walk — Still Happens</div>
+      <div class="walk-body"><strong>50 min walk + 10 min abs circuit</strong> — fasted. Rest day doesn't mean no morning routine. Non-negotiable Mon–Sat.</div>
+    </div>
+    <div>
+      <div class="walk-badge">60</div>
+      <div class="walk-badge-label">Min AM</div>
+    </div>
+  </div>
+
+  <div class="rest-center">
+    <div class="rest-big">REST</div>
+    <div class="rest-text">
+      No gym today.<br><br>
+      <strong>This is strategic.</strong><br>
+      Thursday rest exists specifically to give your legs full recovery before Friday's second leg session.<br><br>
+      Muscle is built <strong>during rest</strong>, not during training.<br><br>
+      Sleep 7–8 hours. Eat well. Hydrate.<br>
+      Tomorrow is Legs again.
+    </div>
+  </div>
+
+  <div class="alert teal">
+    <div class="alert-label">Recovery Protocol</div>
+    <strong>Sleep 7–8 hrs</strong> · <strong>3–4L water</strong> · <strong>2g protein/kg bodyweight</strong> · Light stretching or mobility work is fine. No high-intensity activity.
+  </div>
+</div>
+
+<!-- ══ FRIDAY — LEGS MODERATE ══ -->
+<div class="view" id="view-fri">
+  <div class="day-header">
+    <div class="day-tag-row"><span class="tag legs">Friday</span></div>
+    <div class="day-title">LEGS</div>
+    <div class="day-subtitle">Moderate · Second Leg Session · Fat Burn Priority</div>
+  </div>
+
+  <div class="walk-banner">
+    <div class="walk-icon">☀️</div>
+    <div class="walk-text">
+      <div class="walk-title-text">Fasted Morning Walk — Before Breakfast</div>
+      <div class="walk-body"><strong>50 min walk + 10 min abs circuit</strong> — fasted. AM routine + legs + treadmill = 800+ kcal today.</div>
+    </div>
+    <div>
+      <div class="walk-badge">60</div>
+      <div class="walk-badge-label">Min AM</div>
+    </div>
+  </div>
+
+  <div class="alert green">
+    <div class="alert-label">⚡ Second Leg Session</div>
+    <strong>10–15% lighter than Monday.</strong> Same exercises, reduced load. Focus is metabolic — keep rest short (60 sec), keep heart rate elevated. This session + Monday = maximum fat loss from the biggest muscle group.
+  </div>
+
+  <div class="section-label">Exercises — Moderate Load</div>
+  <div class="ex-list">
+    <div class="ex-item">
+      <div class="ex-num">01</div>
+      <div class="ex-info">
+        <div class="ex-name">Leg Press</div>
+        <div class="ex-note green">Lighter than Monday · keep reps high</div>
+      </div>
+      <div class="ex-sets">3×15<span class="ex-sets-unit">–20</span></div>
+    </div>
+    <div class="ex-item">
+      <div class="ex-num">02</div>
+      <div class="ex-info">
+        <div class="ex-name">Romanian Deadlift</div>
+        <div class="ex-note">Machine · 10–15% less than Monday</div>
+      </div>
+      <div class="ex-sets">3×12<span class="ex-sets-unit">–15</span></div>
+    </div>
+    <div class="ex-item">
+      <div class="ex-num">03</div>
+      <div class="ex-info">
+        <div class="ex-name">Leg Extension</div>
+        <div class="ex-note">Moderate weight · pump focus</div>
+      </div>
+      <div class="ex-sets">3×15</div>
+    </div>
+    <div class="ex-item">
+      <div class="ex-num">04</div>
+      <div class="ex-info">
+        <div class="ex-name">Reverse Lunges</div>
+        <div class="ex-note">Bodyweight or light DB · glute focus</div>
+      </div>
+      <div class="ex-sets">3×12<span class="ex-sets-unit">ea</span></div>
+    </div>
+    <div class="ex-item">
+      <div class="ex-num">05</div>
+      <div class="ex-info">
+        <div class="ex-name">Calf Raise</div>
+        <div class="ex-note">Standing or seated · high reps</div>
+      </div>
+      <div class="ex-sets">3×20</div>
+    </div>
+    <div class="ex-item">
+      <div class="ex-num">06</div>
+      <div class="ex-info">
+        <div class="ex-name">Treadmill / Stairmaster</div>
+        <div class="ex-note red">Finisher + post-session walk · HR above 140</div>
+      </div>
+      <div class="ex-sets" style="color:var(--red);">15<span class="ex-sets-unit">Min</span></div>
+    </div>
+  </div>
+
+  <div class="alert teal">
+    <div class="alert-label">🚶 Post-Session Walk</div>
+    Treadmill at the end of your session <strong>is your post-session walk.</strong> You already walk on it after training — that counts. No extra walk needed.
+  </div>
+</div>
+
+<!-- ══ SATURDAY — BONUS ══ -->
+<div class="view" id="view-sat">
+  <div class="day-header">
+    <div class="day-tag-row"><span class="tag bonus">Saturday</span></div>
+    <div class="day-title">BONUS</div>
+    <div class="day-subtitle">Optional · 4-Day Week is Complete Without This</div>
+  </div>
+
+  <div class="walk-banner">
+    <div class="walk-icon">☀️</div>
+    <div class="walk-text">
+      <div class="walk-title-text">Fasted Morning Walk — Before Breakfast</div>
+      <div class="walk-body"><strong>50 min walk + 10 min abs circuit</strong> — fasted. Last morning routine of the week. Make it count.</div>
+    </div>
+    <div>
+      <div class="walk-badge">60</div>
+      <div class="walk-badge-label">Min AM</div>
+    </div>
+  </div>
+
+  <!-- Opt Tabs -->
+  <div class="opt-tabs">
+    <div class="opt-tab active" onclick="switchOpt('opt1')">
+      <div class="opt-tab-label">Option 1</div>
+      <div class="opt-tab-title">Arms + Abs</div>
+    </div>
+    <div class="opt-tab" onclick="switchOpt('opt2')">
+      <div class="opt-tab-label">Option 2</div>
+      <div class="opt-tab-title">Full Body</div>
+    </div>
+  </div>
+
+  <!-- OPT 1 -->
+  <div class="opt-content active" id="opt1">
+    <div class="alert blue">
+      <div class="alert-label">When to pick this</div>
+      Legs are still sore from Friday. You want a pump session. Arms are completely fresh — no back fatigue, no push fatigue. <strong>Best arm quality of the week.</strong>
+    </div>
+
+    <div class="section-label">Arms + Abs</div>
+    <div class="ex-list">
+      <div class="ex-item">
+        <div class="ex-num">01</div>
+        <div class="ex-info">
+          <div class="ex-name">Incline DB Curl</div>
+          <div class="ex-note blue">Long head · slow negative · 3 sec down</div>
+        </div>
+        <div class="ex-sets">3×10<span class="ex-sets-unit">–12</span></div>
+      </div>
+      <div class="ex-item">
+        <div class="ex-num">02</div>
+        <div class="ex-info">
+          <div class="ex-name">Standing Cable Curl</div>
+          <div class="ex-note blue">Short head · width</div>
+        </div>
+        <div class="ex-sets">3×12<span class="ex-sets-unit">–15</span></div>
+      </div>
+      <div class="ex-item">
+        <div class="ex-num">03</div>
+        <div class="ex-info">
+          <div class="ex-name">Hammer Curl</div>
+          <div class="ex-note blue">Brachialis + forearm thickness</div>
+        </div>
+        <div class="ex-sets">3×10<span class="ex-sets-unit">–12</span></div>
+      </div>
+      <div class="ex-item">
+        <div class="ex-num">04</div>
+        <div class="ex-info">
+          <div class="ex-name">Close Grip Bench Press</div>
+          <div class="ex-note blue">Tricep mass builder</div>
+        </div>
+        <div class="ex-sets">3×10<span class="ex-sets-unit">–12</span></div>
+      </div>
+      <div class="ex-item">
+        <div class="ex-num">05</div>
+        <div class="ex-info">
+          <div class="ex-name">Cable Tricep Pushdown</div>
+          <div class="ex-note blue">Superset with 06 ↓</div>
+        </div>
+        <div class="ex-sets">3×12<span class="ex-sets-unit">–15</span></div>
+      </div>
+      <div class="superset-line"><span class="superset-label">Superset</span></div>
+      <div class="ex-item">
+        <div class="ex-num">06</div>
+        <div class="ex-info">
+          <div class="ex-name">Standing Cable Curl</div>
+          <div class="ex-note blue">Light · superset with 05 ↑</div>
+        </div>
+        <div class="ex-sets">3×12<span class="ex-sets-unit">–15</span></div>
+      </div>
+      <div class="ex-item">
+        <div class="ex-num">06</div>
+        <div class="ex-info">
+          <div class="ex-name">Treadmill / Stairmaster</div>
+          <div class="ex-note red">Finisher + post-session walk · HR above 140</div>
+        </div>
+        <div class="ex-sets" style="color:var(--red);">15<span class="ex-sets-unit">Min</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- OPT 2 -->
+  <div class="opt-content" id="opt2">
+    <div class="alert green">
+      <div class="alert-label">When to pick this</div>
+      Legs feel recovered. You want maximum calorie burn. <strong>Third leg stimulus this week</strong> — active recovery + metabolic circuit. Highest fat loss day when combined with AM walk + post walk.
+    </div>
+
+    <div class="section-label">Full Body Metabolic</div>
+    <div class="ex-list">
+      <div class="ex-item">
+        <div class="ex-num">01</div>
+        <div class="ex-info">
+          <div class="ex-name">Goblet Squat</div>
+          <div class="ex-note green">Light DB · 60 sec rest max</div>
+        </div>
+        <div class="ex-sets">3×15</div>
+      </div>
+      <div class="ex-item">
+        <div class="ex-num">02</div>
+        <div class="ex-info">
+          <div class="ex-name">DB Romanian Deadlift</div>
+          <div class="ex-note green">Light · hamstring focus</div>
+        </div>
+        <div class="ex-sets">3×15</div>
+      </div>
+      <div class="ex-item">
+        <div class="ex-num">03</div>
+        <div class="ex-info">
+          <div class="ex-name">DB Incline Press</div>
+          <div class="ex-note">Light · upper body activation</div>
+        </div>
+        <div class="ex-sets">3×12</div>
+      </div>
+      <div class="ex-item">
+        <div class="ex-num">04</div>
+        <div class="ex-info">
+          <div class="ex-name">Lat Pulldown</div>
+          <div class="ex-note">Moderate · back pump</div>
+        </div>
+        <div class="ex-sets">3×12</div>
+      </div>
+      <div class="ex-item">
+        <div class="ex-num">05</div>
+        <div class="ex-info">
+          <div class="ex-name">Treadmill / Stairmaster</div>
+          <div class="ex-note red">Finisher + post-session walk · HR above 140</div>
+        </div>
+        <div class="ex-sets" style="color:var(--red);">15<span class="ex-sets-unit">Min</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="alert teal">
+    <div class="alert-label">🚶 Post-Session Walk</div>
+    Treadmill at the end of your session <strong>is your post-session walk.</strong> You're already doing it. No extra walk needed after bonus day.
+  </div>
+</div>
+
+<!-- ══ SUNDAY — OFF ══ -->
+<div class="view" id="view-sun">
+  <div class="day-header">
+    <div class="day-tag-row"><span class="tag rest">Sunday</span></div>
+    <div class="day-title">OFF</div>
+    <div class="day-subtitle">Full Rest · No Training · No Walk</div>
+  </div>
+
+  <div class="rest-center">
+    <div class="rest-big">OFF</div>
+    <div class="rest-text">
+      No training.<br>
+      No walk.<br>
+      No guilt.<br><br>
+      <strong>Sunday is sacred.</strong><br><br>
+      This is the day your body rebuilds. Adaptation happens during rest — not during training. Skipping this day slows your progress, it doesn't accelerate it.<br><br>
+      <strong>Eat well. Sleep 8 hours. Recover fully.</strong><br><br>
+      Monday is Legs Heavy. Come back ready.
+    </div>
+  </div>
+
+  <div style="margin-top: 24px;">
+    <div class="section-label">This Week At a Glance</div>
+    <div class="week-strip">
+      <div class="ws-day legs-d">
+        <div class="ws-name">Mon</div>
+        <div class="ws-session">Legs</div>
+        <div class="ws-walk"><span class="ws-walk-dot"></span></div>
+      </div>
+      <div class="ws-day push-d">
+        <div class="ws-name">Tue</div>
+        <div class="ws-session">Push</div>
+        <div class="ws-walk"><span class="ws-walk-dot"></span></div>
+      </div>
+      <div class="ws-day pull-d">
+        <div class="ws-name">Wed</div>
+        <div class="ws-session">Pull</div>
+        <div class="ws-walk"><span class="ws-walk-dot"></span></div>
+      </div>
+      <div class="ws-day">
+        <div class="ws-name">Thu</div>
+        <div class="ws-session" style="color:var(--subtle);">Rest</div>
+        <div class="ws-walk"><span class="ws-walk-dot"></span></div>
+      </div>
+      <div class="ws-day legs-d">
+        <div class="ws-name">Fri</div>
+        <div class="ws-session">Legs</div>
+        <div class="ws-walk"><span class="ws-walk-dot"></span></div>
+      </div>
+      <div class="ws-day arms-d">
+        <div class="ws-name">Sat</div>
+        <div class="ws-session">Bonus</div>
+        <div class="ws-walk"><span class="ws-walk-dot"></span></div>
+      </div>
+      <div class="ws-day today">
+        <div class="ws-name">Sun</div>
+        <div class="ws-session" style="color:var(--subtle);">Off</div>
+      </div>
+    </div>
+    <div style="font-size:11px; color:var(--subtle); text-align:center; margin-top:4px;">
+      <span style="color:var(--teal);">● </span>= 50 min fasted AM walk + 10 min abs circuit
+    </div>
+
+    <div class="stats-row" style="margin-top:12px;">
+      <div class="stat-box">
+        <div class="stat-val">4+1</div>
+        <div class="stat-lbl">Sessions</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-val teal">2</div>
+        <div class="stat-lbl">Leg Days</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-val teal">~4k</div>
+        <div class="stat-lbl">kcal/week</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══ NOTES ══ -->
+<div class="view" id="view-notes">
+  <div class="day-header">
+    <div class="day-tag-row"><span class="tag" style="background:var(--card);color:var(--gold);border:1px solid var(--gold-dim);">Reference</span></div>
+    <div class="day-title">NOTES</div>
+    <div class="day-subtitle">Coaching · Rules · Protocol</div>
+  </div>
+
+  <div class="section-label">Morning Routine</div>
+  <div class="alert teal">
+    <div class="alert-label">Every Day Mon–Sat</div>
+    <strong>50 min fasted walk</strong> before eating anything. Fasted cardio pulls from fat stores — liver glycogen is depleted overnight. HR 115–130. Immediately after: <strong>10 min abs circuit</strong> (crunches + leg raises + plank). Then breakfast. This is your daily non-negotiable. Rain, work, stress — it still happens. Sunday is the only exception.
+  </div>
+
+  <div class="section-label">Post-Session Walk</div>
+  <div class="alert teal">
+    <div class="alert-label">Mon · Tue · Wed</div>
+    <strong>30 min brisk walk</strong> immediately after your session. Glycogen is depleted from lifting — the body pulls from fat at higher rate now. HR 115–130. Do not skip. This is a second fat-burning window on every training day.
+  </div>
+  <div class="alert teal">
+    <div class="alert-label">Fri · Sat</div>
+    Treadmill / Stairmaster at end of session <strong>is your post-session walk.</strong> You're already doing it. No extra walk needed on these days.
+  </div>
+
+  <div class="section-label">The Split — Why It Works</div>
+  <div class="alert">
+    <div class="alert-label">Legs Twice Weekly</div>
+    Legs = 60% of your muscle mass. Every leg session creates massive EPOC (metabolism elevated 24–48 hrs after). <strong>Monday heavy, Friday moderate</strong> with 4-day gap = full recovery + maximum fat loss. This is the single highest-impact decision in the program.
+  </div>
+  <div class="alert">
+    <div class="alert-label">Thursday Rest is Strategic</div>
+    Not random. Specifically placed to give full leg recovery before Friday's second leg session. <strong>Muscle is built during rest, not training.</strong> Protecting Thursday makes Friday better.
+  </div>
+  <div class="alert">
+    <div class="alert-label">Arms Frequency</div>
+    Triceps hit as secondary on Push. Biceps hit as secondary on Pull. Saturday bonus = one dedicated arms day when muscles are completely fresh. <strong>One true arms day is enough</strong> for fat loss goals. Arms are small muscles — they don't drive fat loss. Legs do.
+  </div>
+
+  <div class="section-label">Form Rules</div>
+  <div class="alert">
+    <div class="alert-label">Pull Day — Back</div>
+    Drive <strong>elbows</strong>, not hands. Retract scapula before pulling. Use straps on all rows. Full stretch at top of lat pulldown. Biceps are a finisher — don't try to curl your way through back day.
+  </div>
+  <div class="alert">
+    <div class="alert-label">Legs</div>
+    Leg press 15–20 reps is <strong>deliberate</strong> — higher reps = more metabolic stress, more lactic acid, more calories burned. This is fat loss training, not powerlifting. Friday is 10–15% lighter than Monday — same movements, reduced load, shorter rest.
+  </div>
+  <div class="alert">
+    <div class="alert-label">Incline DB Curl</div>
+    <strong>3 second negative</strong> (slow down). This is where the growth stimulus happens. Don't rush the lowering phase.
+  </div>
+  <div class="alert">
+    <div class="alert-label">Face Pulls</div>
+    <strong>Never skip.</strong> Balances all pressing from Push day. Rear delts + rotator cuff health. These keep your shoulders pain-free long term.
+  </div>
+  <div class="alert">
+    <div class="alert-label">Skull Crushers</div>
+    Stop immediately if you feel elbow pain. Switch to cable overhead tricep extension instead.
+  </div>
+
+  <div class="section-label">Progressive Overload</div>
+  <div class="alert">
+    <div class="alert-label">The Rule</div>
+    10 reps with 20kg last session → try 10 reps with 22.5kg this session. <strong>Log your weights every session.</strong> Small increments compound fast. If you can't add weight, add a rep. If you can't add a rep, hold the weight longer at peak contraction.
+  </div>
+
+  <div class="section-label">Phasing</div>
+  <div class="alert">
+    <div class="alert-label">Weeks 1–4 · Foundation</div>
+    3 sets per exercise. Rest 90–120 sec. Focus on form and building the walk habit. Goal: 50 min AM walk every single day by end of week 2.
+  </div>
+  <div class="alert">
+    <div class="alert-label">Weeks 5–8 · Load</div>
+    3–4 sets. Rest 60–90 sec. Add weight every session where possible. Body has adapted — now load it.
+  </div>
+  <div class="alert">
+    <div class="alert-label">Weeks 9–12 · Intensify</div>
+    4 sets. Rest 45–60 sec. Supersets on all sessions. Shorter rest = more metabolic stress = more fat burn. Phase 3 is where the body changes visibly.
+  </div>
+
+  <div class="section-label">Daily Non-Negotiables</div>
+  <div class="alert teal">
+    <div class="alert-label">Numbers to Hit Every Day</div>
+    <strong>3–4L water</strong> · <strong>2g protein per kg bodyweight</strong> · <strong>7–8 hrs sleep</strong> · <strong>300–500 kcal deficit</strong> from food<br><br>
+    The walks + training create ~4,000 kcal burn per week from exercise. Add a modest food deficit on top. The combination is unstoppable.
+  </div>
+
+  <div class="alert red">
+    <div class="alert-label">Priority Order — If You Miss a Day</div>
+    Never skip <strong>Monday Legs.</strong> It's the highest calorie burn session of the week and sets the metabolic tone. If you can only train 3 days: Mon + Tue + Wed. If you can only train 2: Mon + Fri. Legs always first.
+  </div>
+</div>
+
+<!-- ══ LOG ══ -->
+<div class="view" id="view-log">
+  <div class="day-header">
+    <div class="day-tag-row"><span class="tag" style="background:var(--gold);color:#000;">Log</span></div>
+    <div class="day-title">DAILY LOG</div>
+    <div class="day-subtitle">Track · Score · Improve</div>
+  </div>
+
+  <!-- Scrollable day pills -->
+  <div class="log-week-strip" id="log-week-strip"></div>
+
+  <!-- Selected day header -->
+  <div class="log-selected-header">
+    <div>
+      <div class="log-selected-date" id="logDateDisplay">—</div>
+    </div>
+    <button class="log-today-btn" onclick="logGoToday()" style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.1em;text-transform:uppercase;color:var(--gold);cursor:pointer;padding:4px 8px;border:1px solid var(--gold-dim);background:none;">Today</button>
+  </div>
+
+  <!-- Checkboxes -->
+  <div class="log-card">
+    <div class="log-card-title">Completed</div>
+    <div class="log-check-row" onclick="toggleCheck('amRoutine')">
+      <div>
+        <div class="log-check-label">AM Routine</div>
+        <div class="log-check-sub">50 min walk + 10 min abs</div>
+      </div>
+      <div class="log-checkbox" id="check-amRoutine"></div>
+    </div>
+    <div class="log-check-row" onclick="toggleCheck('gymSession')">
+      <div>
+        <div class="log-check-label">Gym Session</div>
+      </div>
+      <div class="log-checkbox" id="check-gymSession"></div>
+    </div>
+    <div class="log-check-row" onclick="toggleCheck('postWalk')">
+      <div>
+        <div class="log-check-label">Post-Gym Walk</div>
+        <div class="log-check-sub">Treadmill after session</div>
+      </div>
+      <div class="log-checkbox" id="check-postWalk"></div>
+    </div>
+  </div>
+
+  <!-- Scores -->
+  <div class="log-card">
+    <div class="log-card-title">Scores</div>
+    <div class="log-score-row" style="margin-bottom:14px;">
+      <div class="log-score-label">Eating</div>
+      <div class="log-score-sub">How well did you eat today?</div>
+      <div class="score-dots" id="score-eating">
+        <div class="score-dot" onclick="setScore('eating',1)">1</div>
+        <div class="score-dot" onclick="setScore('eating',2)">2</div>
+        <div class="score-dot" onclick="setScore('eating',3)">3</div>
+        <div class="score-dot" onclick="setScore('eating',4)">4</div>
+        <div class="score-dot" onclick="setScore('eating',5)">5</div>
+      </div>
+    </div>
+    <div class="log-score-row">
+      <div class="log-score-label">Session Quality</div>
+      <div class="log-score-sub">Did you push intensity and progressive overload?</div>
+      <div class="score-dots" id="score-session">
+        <div class="score-dot" onclick="setScore('session',1)">1</div>
+        <div class="score-dot" onclick="setScore('session',2)">2</div>
+        <div class="score-dot" onclick="setScore('session',3)">3</div>
+        <div class="score-dot" onclick="setScore('session',4)">4</div>
+        <div class="score-dot" onclick="setScore('session',5)">5</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Vitals -->
+  <div class="log-card">
+    <div class="log-card-title">Vitals</div>
+    <div class="log-water-row">
+      <div>
+        <div class="log-check-label">Water</div>
+        <div class="log-check-sub">Target 3–4L</div>
+      </div>
+      <div class="water-counter">
+        <div class="water-btn" onclick="adjustWater(-0.5)">−</div>
+        <div><div class="water-val" id="water-val">0</div><div class="water-unit">litres</div></div>
+        <div class="water-btn" onclick="adjustWater(0.5)">+</div>
+      </div>
+    </div>
+    <div style="height:1px;background:var(--border);margin:6px 0;"></div>
+    <div class="log-sleep-row">
+      <div>
+        <div class="log-check-label">Sleep</div>
+        <div class="log-check-sub">Target 7–8 hrs</div>
+      </div>
+      <div class="sleep-counter">
+        <div class="water-btn" onclick="adjustSleep(-0.5)">−</div>
+        <div><div class="sleep-val" id="sleep-val">0</div><div class="sleep-unit">hours</div></div>
+        <div class="water-btn" onclick="adjustSleep(0.5)">+</div>
+      </div>
+    </div>
+    <div style="height:1px;background:var(--border);margin:6px 0;"></div>
+    <div class="log-weight-row">
+      <div>
+        <div class="log-check-label">Weight</div>
+        <div class="log-check-sub">Morning · after bathroom</div>
+      </div>
+      <div class="weight-input-wrap">
+        <input class="weight-input" type="number" id="weight-input" placeholder="—" step="0.1" min="30" max="250" oninput="markDirty()">
+        <span class="weight-unit">kg</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Notes -->
+  <div class="log-card">
+    <div class="log-card-title">Notes</div>
+    <textarea class="log-notes-input" id="log-notes" placeholder="How did today go?" rows="2" oninput="markDirty()"></textarea>
+  </div>
+
+  <button class="log-save-btn" id="log-save-btn" onclick="saveLog()">SAVE DAY</button>
+</div>
+
+<!-- BOTTOM NAV -->
+<div class="bottom-hint">
+  <button class="hint-prev" onclick="navigateDay(-1)">← Prev</button>
+  <span class="hint-today" onclick="goToToday()">Today</span>
+  <button class="hint-next" onclick="navigateDay(1)">Next →</button>
+</div>
+
+<script>
+  const days = ['mon','tue','wed','thu','fri','sat','sun','notes','log'];
+  let currentDay = 'mon';
+
+  function switchDay(day) {
+    document.querySelectorAll('.view').forEach(v => v.classList.remove('active'));
+    document.querySelectorAll('.day-btn').forEach(b => b.classList.remove('active'));
+    document.getElementById('view-' + day).classList.add('active');
+    document.querySelector(`[data-view="${day}"]`).classList.add('active');
+    currentDay = day;
+    const btn = document.querySelector(`[data-view="${day}"]`);
+    btn.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+    if (day === 'log') { buildWeekStrip(); renderLog(); }
+  }
+
+  function navigateDay(dir) {
+    const idx = days.indexOf(currentDay);
+    const next = days[(idx + dir + days.length) % days.length];
+    switchDay(next);
+  }
+
+  function goToToday() {
+    const dayMap = [6, 0, 1, 2, 3, 4, 5];
+    const jsDay = new Date().getDay();
+    const ourDay = dayMap[jsDay];
+    switchDay(days[ourDay]);
+  }
+
+  function switchOpt(opt) {
+    document.querySelectorAll('.opt-tab').forEach(t => t.classList.remove('active'));
+    document.querySelectorAll('.opt-content').forEach(c => c.classList.remove('active'));
+    document.getElementById(opt).classList.add('active');
+    event.currentTarget.classList.add('active');
+  }
+
+  // ── LOG TRACKER ──────────────────────────────
+
+  const DAY_NAMES = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+  const MONTH_NAMES = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+
+  let logDate = new Date();
+  logDate.setHours(0,0,0,0);
+  let currentLog = {};
+  let isDirty = false;
+
+  function dateKey(d) {
+    return `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`;
+  }
+
+  function loadLogData(key) {
+    try { return JSON.parse(localStorage.getItem('log_' + key) || 'null'); } catch(e) { return null; }
+  }
+
+  function saveLogData(key, data) {
+    try { localStorage.setItem('log_' + key, JSON.stringify(data)); } catch(e) {}
+  }
+
+  function markDirty() { isDirty = true; }
+
+  // Build scrollable 14-day pill strip centered on today
+  function buildWeekStrip() {
+    const strip = document.getElementById('log-week-strip');
+    strip.innerHTML = '';
+    const today = new Date(); today.setHours(0,0,0,0);
+
+    // Show 14 days: 7 past + today + 6 future
+    for (let i = -7; i <= 6; i++) {
+      const d = new Date(today); d.setDate(d.getDate() + i);
+      const key = dateKey(d);
+      const data = loadLogData(key);
+      const dn = DAY_NAMES[d.getDay()];
+      const isToday = i === 0;
+      const isSelected = dateKey(d) === dateKey(logDate);
+
+      const pill = document.createElement('div');
+      let cls = 'log-day-pill';
+      if (isToday) cls += ' today-pill';
+      if (isSelected) cls += ' active';
+      pill.className = cls;
+
+      // Score dot color
+      const avgScore = data ? ((data.eating||0) + (data.session||0)) / 2 : 0;
+      const scoreClass = avgScore >= 4 ? 'score-hi' : avgScore >= 3 ? 'score-mid' : avgScore > 0 ? 'score-lo' : '';
+
+      pill.innerHTML = `
+        ${isToday ? '<div class="log-today-tag">NOW</div>' : ''}
+        <div class="log-pill-name">${dn}</div>
+        <div class="log-pill-date">${d.getDate()}</div>
+        <div class="log-pill-dots">
+          <div class="log-pill-dot ${data && data.amRoutine ? 'on' : ''}"></div>
+          <div class="log-pill-dot ${data && data.gymSession ? 'on' : ''}"></div>
+          <div class="log-pill-dot ${data && data.postWalk ? 'on' : ''}"></div>
+          <div class="log-pill-dot ${scoreClass}"></div>
+        </div>`;
+
+      pill.onclick = () => {
+        logDate = new Date(d);
+        renderLog();
+        buildWeekStrip();
+        // Scroll selected pill into view
+        setTimeout(() => pill.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' }), 50);
+      };
+
+      strip.appendChild(pill);
+    }
+
+    // Scroll today into center on first build
+    setTimeout(() => {
+      const todayPill = strip.querySelector('.today-pill');
+      if (todayPill) todayPill.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+    }, 100);
+  }
+
+  function renderLog() {
+    const key = dateKey(logDate);
+    currentLog = loadLogData(key) || { amRoutine: false, gymSession: false, postWalk: false, eating: 0, session: 0, water: 0, sleep: 0, weight: '', notes: '' };
+
+    const dn = DAY_NAMES[logDate.getDay()];
+    document.getElementById('logDateDisplay').textContent = `${dn} ${logDate.getDate()} ${MONTH_NAMES[logDate.getMonth()]}`;
+
+    renderCheck('amRoutine', currentLog.amRoutine);
+    renderCheck('gymSession', currentLog.gymSession);
+    renderCheck('postWalk', currentLog.postWalk);
+    renderScore('eating', currentLog.eating);
+    renderScore('session', currentLog.session);
+
+    document.getElementById('water-val').textContent = currentLog.water || 0;
+    document.getElementById('sleep-val').textContent = currentLog.sleep || 0;
+    document.getElementById('weight-input').value = currentLog.weight || '';
+    document.getElementById('log-notes').value = currentLog.notes || '';
+
+    const btn = document.getElementById('log-save-btn');
+    btn.textContent = 'SAVE DAY';
+    btn.classList.remove('saved');
+    isDirty = false;
+  }
+
+  function renderCheck(field, val) {
+    const el = document.getElementById('check-' + field);
+    if (val) el.classList.add('checked'); else el.classList.remove('checked');
+  }
+
+  function renderScore(field, val) {
+    document.getElementById('score-' + field).querySelectorAll('.score-dot').forEach((d, i) => {
+      d.className = 'score-dot';
+      if (i + 1 === val) d.classList.add('active-' + val);
+    });
+  }
+
+  function toggleCheck(field) {
+    currentLog[field] = !currentLog[field];
+    renderCheck(field, currentLog[field]);
+    markDirty();
+  }
+
+  function setScore(field, val) {
+    currentLog[field] = (currentLog[field] === val) ? 0 : val;
+    renderScore(field, currentLog[field]);
+    markDirty();
+  }
+
+  function adjustWater(delta) {
+    currentLog.water = Math.round(Math.max(0, Math.min(8, (currentLog.water||0) + delta)) * 2) / 2;
+    document.getElementById('water-val').textContent = currentLog.water;
+    markDirty();
+  }
+
+  function adjustSleep(delta) {
+    currentLog.sleep = Math.round(Math.max(0, Math.min(14, (currentLog.sleep||0) + delta)) * 2) / 2;
+    document.getElementById('sleep-val').textContent = currentLog.sleep;
+    markDirty();
+  }
+
+  function saveLog() {
+    currentLog.weight = document.getElementById('weight-input').value;
+    currentLog.notes = document.getElementById('log-notes').value;
+    saveLogData(dateKey(logDate), currentLog);
+    const btn = document.getElementById('log-save-btn');
+    btn.textContent = '✓ SAVED';
+    btn.classList.add('saved');
+    isDirty = false;
+    buildWeekStrip();
+    setTimeout(() => { btn.textContent = 'SAVE DAY'; btn.classList.remove('saved'); }, 1800);
+  }
+
+  function logGoToday() {
+    logDate = new Date(); logDate.setHours(0,0,0,0);
+    buildWeekStrip(); renderLog();
+  }
+
+  goToToday();
+</script>
+</body>
+</html>
