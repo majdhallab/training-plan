@@ -475,6 +475,16 @@ canvas { display:block; width:100% !important; }
         <div class="home-date" id="home-date">—</div>
         <div class="home-name" id="home-greeting">Good morning,<br>Majd</div>
       </div>
+      <div onclick="openSettings()" style="
+        width:36px;height:36px;background:var(--elevated);
+        border:1.5px solid var(--border2);border-radius:50%;
+        display:flex;align-items:center;justify-content:center;
+        cursor:pointer;flex-shrink:0;margin-top:4px;
+      ">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="var(--t3)" stroke-width="2">
+          <circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/>
+        </svg>
+      </div>
     </div>
   </div>
 
@@ -625,6 +635,41 @@ canvas { display:block; width:100% !important; }
   </div>
 
 </div>
+</div>
+
+<!-- ══ SETUP SCREEN ══ -->
+<div class="screen" id="screen-setup">
+  <div style="display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:100%;padding:40px 28px;">
+    <div style="font-family:'Bebas Neue',sans-serif;font-size:52px;color:var(--t1);letter-spacing:0.04em;margin-bottom:6px;">TRAIN</div>
+    <div style="width:40px;height:2px;background:var(--gold);margin-bottom:24px;"></div>
+    <div style="font-size:16px;color:var(--t1);font-weight:700;font-family:'Inter',sans-serif;margin-bottom:8px;text-align:center;">Connect Google Sheets</div>
+    <div style="font-size:13px;color:var(--t3);font-family:'Inter',sans-serif;text-align:center;line-height:1.7;margin-bottom:32px;">Your training data will be stored in your Google Sheets — safe forever, works on any device.</div>
+    
+    <div style="width:100%;margin-bottom:14px;">
+      <div style="font-size:11px;color:var(--t4);font-weight:600;letter-spacing:0.06em;text-transform:uppercase;font-family:'Inter',sans-serif;margin-bottom:8px;">Apps Script Web App URL</div>
+      <input id="setup-url-input" type="url" placeholder="https://script.google.com/macros/s/..." style="
+        width:100%;background:var(--elevated);border:1.5px solid var(--border2);
+        border-radius:var(--r-sm);color:var(--t1);font-family:'Inter',sans-serif;
+        font-size:13px;padding:14px;outline:none;
+      ">
+    </div>
+
+    <div id="setup-error" style="font-size:12px;color:var(--red);font-family:'Inter',sans-serif;margin-bottom:14px;display:none;text-align:center;"></div>
+    <div id="setup-testing" style="font-size:12px;color:var(--t3);font-family:'Inter',sans-serif;margin-bottom:14px;display:none;text-align:center;">Testing connection...</div>
+
+    <button onclick="testAndSaveUrl()" style="
+      width:100%;padding:16px;background:var(--gold);border:none;
+      color:#000;font-family:'Inter',sans-serif;font-weight:800;
+      font-size:15px;letter-spacing:0.06em;text-transform:uppercase;
+      border-radius:var(--r);box-shadow:var(--sh-gold);cursor:pointer;
+      margin-bottom:20px;
+    ">Connect & Continue</button>
+
+    <div style="font-size:12px;color:var(--t4);font-family:'Inter',sans-serif;text-align:center;line-height:1.8;">
+      Need help? See the setup instructions in the<br>
+      <span style="color:var(--gold);">TrainingLog_Script.gs</span> file
+    </div>
+  </div>
 </div>
 
 <!-- ══════════════════════════════
@@ -1520,11 +1565,106 @@ function dateKey(d) {
 function getTodayDayKey() {
   return DAY_KEYS[new Date().getDay()];
 }
+// ── STORAGE: Google Sheets + localStorage cache ──
+const SCRIPT_URL_KEY = 'gs_script_url';
+
+function getScriptUrl() {
+  return localStorage.getItem(SCRIPT_URL_KEY) || '';
+}
+
+function setScriptUrl(url) {
+  localStorage.setItem(SCRIPT_URL_KEY, url);
+}
+
+// Load from cache first (instant), then sync from Sheets in background
 function loadLog(key) {
   try { return JSON.parse(localStorage.getItem('log_'+key)||'null'); } catch(e) { return null; }
 }
+
+// Save to both localStorage (instant) and Google Sheets (background)
 function saveLogData(key, data) {
+  // Always save to localStorage immediately
   try { localStorage.setItem('log_'+key, JSON.stringify(data)); } catch(e) {}
+  // Push to Google Sheets in background
+  pushToSheets(key, data);
+}
+
+async function pushToSheets(key, data) {
+  const url = getScriptUrl();
+  if (!url) return;
+  try {
+    await fetch(url, {
+      method: 'POST',
+      mode: 'no-cors',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ date: key, ...data })
+    });
+  } catch(e) {
+    console.warn('Sheets sync failed:', e);
+  }
+}
+
+// Pull all data from Sheets and update localStorage
+async function syncFromSheets() {
+  const url = getScriptUrl();
+  if (!url) return false;
+  try {
+    const res = await fetch(url + '?all=1', { mode: 'cors' });
+    const json = await res.json();
+    if (json.all) {
+      json.all.forEach(entry => {
+        if (entry.date) {
+          const key = 'log_' + entry.date;
+          const existing = loadLog(entry.date);
+          // Only update if sheets has newer data
+          if (!existing || (entry.updatedAt && existing.updatedAt && entry.updatedAt > existing.updatedAt) || !existing.updatedAt) {
+            const { date, updatedAt, ...data } = entry;
+            data.updatedAt = updatedAt;
+            localStorage.setItem(key, JSON.stringify(data));
+          }
+        }
+      });
+      return true;
+    }
+  } catch(e) {
+    console.warn('Sheets sync failed:', e);
+  }
+  return false;
+}
+
+async function testAndSaveUrl() {
+  const input = document.getElementById('setup-url-input');
+  const error = document.getElementById('setup-error');
+  const testing = document.getElementById('setup-testing');
+  const url = input.value.trim();
+  
+  if (!url || !url.includes('script.google.com')) {
+    error.textContent = 'Please enter a valid Apps Script URL';
+    error.style.display = 'block';
+    return;
+  }
+
+  error.style.display = 'none';
+  testing.style.display = 'block';
+
+  try {
+    const res = await fetch(url + '?test=1', { mode: 'cors' });
+    const json = await res.json();
+    testing.style.display = 'none';
+    setScriptUrl(url);
+    // Sync existing data from sheets
+    await syncFromSheets();
+    // Go to home
+    document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
+    document.querySelector('.tab-bar').style.display = 'flex';
+    document.getElementById('screen-home').classList.add('active');
+    document.getElementById('tab-home').classList.add('active');
+    refreshHome();
+  } catch(e) {
+    testing.style.display = 'none';
+    error.textContent = 'Could not connect. Check the URL and try again.';
+    error.style.display = 'block';
+  }
 }
 
 // ── NAVIGATION ──
@@ -2161,7 +2301,36 @@ function logGoToday() { logDate=new Date(); logDate.setHours(0,0,0,0); buildWeek
 })();
 
 // ── INIT ──
-refreshHome();
+function openSettings() {
+  document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
+  document.getElementById('screen-setup').classList.add('active');
+  document.querySelector('.tab-bar').style.display = 'none';
+  const url = getScriptUrl();
+  if (url) document.getElementById('setup-url-input').value = url;
+}
+
+async function init() {
+  const url = getScriptUrl();
+  if (!url) {
+    // Show setup screen
+    document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
+    document.getElementById('screen-setup').classList.add('active');
+    // Hide tab bar until setup complete
+    document.querySelector('.tab-bar').style.display = 'none';
+    document.getElementById('splash').style.animation = 'splashOut 0.4s ease 0.8s forwards';
+  } else {
+    // Sync from sheets in background, render immediately from cache
+    refreshHome();
+    syncFromSheets().then(synced => {
+      if (synced) refreshHome();
+    });
+  }
+}
+
+// Also sync when pull-to-refresh fires
+const origReload = location.reload.bind(location);
+
+init();
 </script>
 </body>
 </html>
